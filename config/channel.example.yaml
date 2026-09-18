@@ -1,0 +1,36 @@
+# config/channel.yaml 로 복사해서 채워 넣으세요.
+
+channel_name: "예: 세상의 잡학사전"
+language: ko
+
+# faceless-video 워크플로우의 5가지 타입 중 하나:
+# explainer | history | kids | picture_story | fairy_tale_myth
+# 영상 속 예시(안티키테라 기계, 콘크리트 초고층 건물)는 history 타입에 해당.
+channel_type: history
+
+# 영상 속 채널이 다룬 주제 예시: "2천년 전 아날로그 컴퓨터", "로마 병사 스위스아미나이프",
+# "고대 로마 배달음식", "최초의 자동문", "신발 밑창 광고의 역사"
+niche_description: >
+  잘 알려지지 않은 역사/과학 속 흥미로운 사실. 사람들이 "이걸 몰랐다니" 하고
+  놀랄 만한, 검증 가능한 실화 위주.
+
+style_preset: cinematic-storybook   # references/preset-catalog.md 참고, 채널 톤에 맞게 조정
+narrator_voice: ko-female-warm      # narrator 워크플로우에서 사용할 보이스 지정
+
+video:
+  aspect_ratio: "9:16"
+  target_duration_seconds: 45   # 30~75 권장 (쇼츠 규정 60초 이하면 title에 #Shorts 자동 포함)
+  subtitles: true
+  cover_thumbnail: true
+
+upload:
+  daily_count: 1          # 하루 몇 편 올릴지
+  publish_time_kst: "08:00"
+  privacy_before_publish: private   # publishAt 예약 전까지 상태
+  category_id: 27          # 27=Education
+  made_for_kids: false
+  default_hashtags: ["#shorts", "#역사", "#과학"]
+
+# 같은 하위 포맷/주제가 연속으로 나오지 않도록 다양성 규칙 (AGENT_PLAYBOOK.md 참고)
+diversity:
+  avoid_repeat_within_last_n_topics: 10
