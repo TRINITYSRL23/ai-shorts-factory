@@ -9,4 +9,3 @@ work/
 *.png
 __pycache__/
 *.pyc
-config/channel.yaml

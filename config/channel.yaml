@@ -1,0 +1,39 @@
+# 이탈리아어권 채널 설정.
+
+channel_name: "La Svolta"
+language: it
+
+# faceless-video 워크플로우의 5가지 타입 중 하나:
+# explainer | history | kids | picture_story | fairy_tale_myth
+# 영상 속 예시(안티키테라 기계, 콘크리트 초고층 건물)는 history 타입에 해당.
+channel_type: history
+
+# 이탈리아어권 시청자 기준 "몰랐던 사실" 트리비아. 검증 가능한 실화 위주,
+# 반전/서프라이즈 포인트가 있는 것.
+niche_description: >
+  Fatti sorprendenti e poco conosciuti di storia e scienza — cose che la
+  gente non sa e restano sorprese a scoprirle. Sempre basati su fatti
+  verificabili, con un colpo di scena o una rivelazione a sorpresa.
+
+style_preset: cinematic-storybook   # references/preset-catalog.md 참고, 채널 톤에 맞게 조정
+narrator_voice: it-female-warm      # narrator 워크플로우에서 사용할 이탈리아어 보이스 지정
+
+video:
+  aspect_ratio: "9:16"
+  target_duration_seconds: 45   # 30~75 권장 (쇼츠 규정 60초 이하면 title에 #Shorts 자동 포함)
+  subtitles: true
+  subtitle_language: it
+  cover_thumbnail: true
+
+upload:
+  daily_count: 1          # 하루 몇 편 올릴지
+  publish_time_local: "08:00"
+  timezone: "Europe/Rome"          # publishAt 계산 시 이 기준으로 UTC 변환
+  privacy_before_publish: private   # publishAt 예약 전까지 상태
+  category_id: 27          # 27=Education
+  made_for_kids: false
+  default_hashtags: ["#shorts", "#storia", "#scienza", "#losapevi"]
+
+# 같은 하위 포맷/주제가 연속으로 나오지 않도록 다양성 규칙 (AGENT_PLAYBOOK.md 참고)
+diversity:
+  avoid_repeat_within_last_n_topics: 10
