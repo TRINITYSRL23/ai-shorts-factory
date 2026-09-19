@@ -21,6 +21,10 @@
 3. `diversity.avoid_repeat_within_last_n_topics` 규칙에 걸리는 주제는 제외
 4. 가장 매력적인 것 1개를 최종 선택하고, 선택 이유를 한 줄로 기록
 
+**언어:** 대본·나레이션·제목·설명·태그·자막은 전부 `config.language`(예: `it` = 이탈리아어)
+기준으로 작성. 주제 리서치는 다른 언어 자료를 참고해도 되지만, 결과물 텍스트는 항상
+`config.language` 단일 언어로 통일할 것.
+
 ## 2. 영상 제작 — Higgsfield `faceless-video` 워크플로우 그대로 실행
 
 1. `get_workflow_instructions({ workflow: "faceless-video" })` 로 SKILL.md 로드
@@ -39,10 +43,11 @@
 
 ## 3. 업로드 메타데이터 작성
 
-- 제목: 클릭을 유도하되 낚시성/허위 없이. 60자 이내 권장.
-- 설명: 2~3문장 요약 + 출처/근거 한 줄 + `config.upload.default_hashtags`
-- 태그: 주제 관련 키워드 5~10개
-- `publish_at`: 오늘 날짜 + `config.upload.publish_time_kst`를 UTC RFC3339로 변환
+- 제목: `config.language`로, 클릭을 유도하되 낚시성/허위 없이. 60자 이내 권장.
+- 설명: `config.language`로 2~3문장 요약 + 출처/근거 한 줄 + `config.upload.default_hashtags`
+- 태그: 주제 관련 키워드 5~10개 (역시 `config.language` 기준)
+- `publish_at`: 오늘 날짜 + `config.upload.publish_time_local`을 `config.upload.timezone`
+  기준으로 UTC RFC3339로 변환 (예: Europe/Rome 08:00 → UTC 06:00 또는 07:00, DST 여부 확인)
 
 ## 4. 업로드 실행
 

@@ -42,7 +42,7 @@
 ## 데이터 흐름
 
 ```
-[Routine: 매일 08:00 KST]
+[Routine: 매일 config.upload.publish_time_local (예: 08:00 Europe/Rome)]
         │
         ▼
 Claude 세션 기동, AGENT_PLAYBOOK.md 지시대로 실행

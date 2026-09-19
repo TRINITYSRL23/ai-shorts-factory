@@ -25,7 +25,8 @@ video:
 
 upload:
   daily_count: 1          # 하루 몇 편 올릴지
-  publish_time_kst: "08:00"
+  publish_time_local: "08:00"
+  timezone: "Asia/Seoul"           # publishAt 계산 시 이 기준으로 UTC 변환
   privacy_before_publish: private   # publishAt 예약 전까지 상태
   category_id: 27          # 27=Education
   made_for_kids: false
